@@ -1,0 +1,39 @@
+.topo {
+	padding: 5px;
+}
+.topo-left {
+	float: left;
+	margin-top: 10px;
+}
+.topo-right {
+	float: right;
+}
+.clear {
+	clear: both;
+}
+.todos-produtos {
+	margin-left: 10px;
+}
+.produto {
+	clear: both;
+	margin-top: 10px;
+	float: left;
+}
+.img-produto {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+.titulo-produto {
+	float: left;
+}
+.img-bandeiras {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 30px;
+	width: 50px;
+}
+.rodape-right {
+	float: right;
+	margin-right: 10px;
+}
