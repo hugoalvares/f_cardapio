@@ -21,13 +21,19 @@ var js = {
     },
 
     buildPedido : function() {
-        var pedido = '<div data-role="collapsible"><h3>Coca Cola Lata</h3>Descrição do produto ... <br> ... <div id="001" class ="add" onclick="js.removeProduto(this.id);">Remover do pedido</div></div>';
+        /*
+        ar pedido = '<div data-role="collapsible"><h3>Coca Cola Lata</h3>Descrição do produto ... <br> ... <div id="001" class ="add" onclick="js.removeProduto(this.id);">Remover do pedido</div></div>';
         $('#listaProdutos').html(pedido);
+        */
     },
 
     bindPageChangeEvents : function() {
         $(document).bind('pagechange', function (e, args) {
-            js.buildPedido();
+            var pageId = args.toPage.attr('id');
+
+            if (pageId == 'pedido') {
+                js.buildPedido();
+            }
         });
     },
 
