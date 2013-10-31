@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<div data-role="page" id="index">
+	<div data-role="page" id="pedido">
 		<div data-role="header" class="topo">
 			<div class="topo-left">
 				Restaurante X - Mesa 10
@@ -26,18 +26,19 @@
 		<div id="pedido" class="pedido">
 			<div id="pedido-text" class="pedido-text">
 			</div>
-		</div>
+		</div>		
 
 		<div data-role="content">
 			<div class="todos-produtos">
-				<div data-role="collapsible-set">
+				<div id="listaProdutos" data-role="collapsible-set">
+				<!--
 					<div data-role="collapsible">
 						<h3>Coca Cola Lata</h3>
 						Descrição do produto ... 
 						<br>
 						...
-						<div id="001" class ="add" onclick="js.adicionaProduto(this.id);">
-							Adicionar ao pedido
+						<div id="001" class ="add" onclick="js.removeProduto(this.id);">
+							Remover do pedido
 						</div>
 					</div>
 					
@@ -46,10 +47,11 @@
 						Descrição do produto ... 
 						<br>
 						...
-						<div id="002" class ="add" onclick="js.adicionaProduto(this.id);">
-							Adicionar ao pedido
+						<div id="002" class ="add" onclick="js.removeProduto(this.id);">
+							Remover do pedido
 						</div>
 					</div>											
+				-->
 				</div>			
 			</div>
 		</div>
@@ -59,7 +61,7 @@
 			<img id="ingles" class="img-bandeiras" src="img\reino.jpg" onclick="js.mudaBandeira(this.id);">
 			<img id="espanhol" class="img-bandeiras" src="img\espanha.jpg" onclick="js.mudaBandeira(this.id);">
 			<div class="rodape-right">
-				<a href="#" id="btnRealizarPedido" data-role="button" data-inline="true" data-mini="true" onclick="js.loadPage('pedido.html');">Realizar Pedido</a>	
+				<a href="#" id="btnRealizarPedido" data-role="button" data-inline="true" data-mini="true" onclick="js.loadPage('index.html');">Voltar</a>	
 			</div>
 		</div>
 	</div>
@@ -68,7 +70,7 @@
 	    $(document).ready(function() {
 	        js.bindPageChangeEvents();
 	    });
-    </script>
+    </script>	
 
 </body>
 </html>

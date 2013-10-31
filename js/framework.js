@@ -1,35 +1,44 @@
 var js = {
 
-    // funções de acesso ao servidor
-    // ----------------------------------------------------
-    request : function(action, data, responseHandler) {
-        var params = {
-            action : action,
-            dataset : JSON.stringify(data)
-        };
-        js.callService(params, responseHandler);
+    arrayProdutos : {
+        '001' : {'codProduto' : '001', 'nmProduto' : 'Coca Cola Lata'},
+        '002' : {'codProduto' : '002', 'nmProduto' : 'Fanta Laranja Lata'}
     },
 
-    callService : function(params, responseHandler) {
-        $.ajax({
-            type: "POST",
-            url: 'php/server.php',
-            data: params,
-            timeout : 15000,
-            success: function(response) {
-                responseHandler(response);
-            },
-            error: function(objAJAXRequest, strError) {
-                alert(strError + 'Não foi possivel fazer conexão.');
-            }
-        });
+    pedido : [],
+    adicionaProduto : function(codProduto) {
+        //nmProduto = js.arrayProdutos[codProduto]['nmProduto'];
+        js.pedido.push(codProduto);
+        $('#pedido').html(js.pedido.length + ' produto(s)');
     },
-    // ----------------------------------------------------
 
-    testeAjax : function() {
-        var data = '';
-        js.request('teste', data, function(response) {
-            alert(response.data);
+    removeProduto : function(codProduto) {
+
+    },
+
+    loadPage : function(page) {
+        $.mobile.changePage(page);
+    },
+
+    buildPedido : function() {
+        var pedido = '<div data-role="collapsible"><h3>Coca Cola Lata</h3>Descrição do produto ... <br> ... <div id="001" class ="add" onclick="js.removeProduto(this.id);">Remover do pedido</div></div>';
+        $('#listaProdutos').html(pedido);
+    },
+
+    bindPageChangeEvents : function() {
+        $(document).bind('pagechange', function (e, args) {
+            js.buildPedido();
         });
     },
+
+    mudaBandeira : function(id) {
+        $('.img-bandeiras').removeClass('selected');
+        $('#' + id).addClass('selected');
+
+        js.traduz(id);
+    },
+
+    traduz : function(lingua) {
+
+    }
 }

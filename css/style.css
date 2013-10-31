@@ -37,3 +37,22 @@
 	float: right;
 	margin-right: 10px;
 }
+.add {
+	margin-top: 10px;
+	height: 30px;
+	color: white;
+	background-color: orange;
+}
+.pedido {
+	width: 100%;
+	height: 30px;
+	background-color: gray;
+	color: white;
+}
+.pedido-text {
+	margin-left: 3%;
+}
+.selected {
+	border: solid;
+	border-color: white;
+}
